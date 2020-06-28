@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Sophia Science</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/sophia_style.css"/>
+  <link rel="shortcut icon" href="/sophia.png" type="image/x-icon"/>
+
+</head>
+
+<body>
+    <%- include("navbar.ejs") %>
+    
+    <div id="continut">
+    <%- include("options.ejs") %>
+  </div>
+  <div id="continut">
+    <div class="inscriere">
+<form id="login" method="post">
+    <label>
+        Admin:  <br><br>
+        <input type="text" name="username" ><br><br>
+    </label>
+    <label>
+        Parola: <br><br>
+        <input type="password" name="parola" ><br><br>
+    </label>
+    
+    <input type="submit" value="Submit">
+</form>
+</div>
+</div>
+  <script src='/index_contact.js'></script>
+</body>
+<%- include("footer.ejs") %>
+</html>

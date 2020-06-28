@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Sophia Science</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/sophia_style.css"/>
+  <link rel="shortcut icon" href="/sophia.png" type="image/x-icon"/>
+ 
+</head>
+
+<body class="body_home">
+  <label class="switch">
+    <input type="checkbox">
+    <span id="switch" class="slider" onclick="toggleTheme()"></span>
+  </label>
+  <br>
+  
+  
+  <div class="open_navbar">
+    <span id="buton_meniu" onclick="menu_homepage()">&#9776;</span>
+    </div>
+  <div class="topnav" id="myNav">
+  <ul>
+    <li><a href="sophia.html">Acasă</a></li>
+    <li><a href="about.html">Despre noi</a></li>
+    <li class="dropdown">
+      <a href="contest.html">Concursuri</a>
+      <div class="dropdown-content">
+        <a href="contest.html">WRO</a>
+        <a href="contest.html">FLL</a>
+        <a href="contest.html">FLL Junior</a>
+        <a href="contest.html">FTC</a>
+      </div>
+    </li>
+    <li><a href="galery.html">Galerie</a></li>
+  </ul>  
+  <ul class="contact">
+    <li ><a href="inscrieri.html">Înscriere</a></li>
+    <li ><a href="contact.html">Contact</a></li>
+    
+  </ul>
+  </div>
+  <img src="/sophia-neagra.png" alt='Sophia Science' style="width:90%; margin-left: 5%; margin-right:5%;" >
+
+  
+  
+  <!-- <div class="flip-box">
+    <div class="flip-box-inner">
+      <div class="flip-box-front">
+        <img src="lego.jpg" alt="Lego" style="padding: 5%; max-width: 90%; height: autofit;">
+      </div>
+      <div class="flip-box-back" >
+        <div style="padding: 20%">
+        <p>Clubul Sophia Science oferă într-un spațiu experimental, programe de robotică educațională pentru copii și tineri.</p>
+        <p>Sunteți la un click distanță să pătrundeți într-un univers robotizat, ale cărui taine sunt deslușite la orice pas.</p>
+        <p>Clubul Sophia Science a accesat în anul 2019 fonduri europene pentru dezvoltare prin proiectul
+           FISH ROBO FRIEND - Robotica Educațională Soluția Viitorului pentru Zonele Umede.</p>
+      </div>
+      </div>
+    </div>
+  </div> -->
+
+  <script src='/index_contact.js'></script>
+</body>
+<%- include("footer.ejs") %>
+
+</html>

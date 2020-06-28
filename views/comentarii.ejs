@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Sophia Science</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/sophia_style.css"/>
+  <link rel="shortcut icon" href="/sophia.png" type="image/x-icon"/>
+  
+</head>
+
+<body>
+  
+  <!-- <img src="sophia.png" alt='Sophia Science' style="width:300px;" > -->
+  <div class='styledimg' alt="Sophia Science"></div>
+  <label class="switch">
+    <input type="checkbox">
+    <span id="switch" class="slider" onclick="toggleTheme()"></span>
+  </label>
+  <div class="open_navbar">
+  <span id="buton_meniu" onclick="menu()">&#9776;</span>
+  </div>
+  <div class="topnav" id="myNav">  
+  <ul >
+    <li><a href="sophia.html">Acasă</a></li>
+    <li><a href="about.html">Despre noi</a></li>
+    <li class="dropdown">
+      <a href="contest.html">Concursuri</a>
+      <div class="dropdown-content">
+        <a href="contest.html">WRO</a>
+        <a href="contest.html">FLL</a>
+        <a href="contest.html">FLL Junior</a>
+        <a href="contest.html">FTC</a>
+      </div>
+    </li>
+    <li><a href="galery.html">Galerie</a></li>
+  </ul>  
+  <ul class="contact">
+    <li ><a  href="inscrieri.html">Înscriere</a></li>
+    <li ><a class="active2" href="contact.html">Contact</a></li>
+  </ul>
+  
+  </div>
+  
+  <div class='galery' style=" font-family: 'Open Sans', sans-serif; font-size:xx-large ">
+    <button id="button_com" class="button_galery" onclick="play_comm()">COMENTARII</button>
+  </div>
+  <div id='comment_list' style='visibility: hidden;'>
+    
+    
+    <% if (locals.BD) { %>
+      <form class='comm_list' method='post' >
+            <!-- <div> -->
+            
+                <% for (var i = 0; i < BD.comentarii.length; i++) { %>
+                          <div class="galery" id='com'>
+                            <p><%= BD.comentarii[i].name %>: <%= BD.comentarii[i].subject %></p>
+                            <button onclick="addLike(<%= BD.comentarii[i].id%>)">+</button>
+                            <button type="submit" class='dislike' name="dislikeCommentId" value='<%= BD.comentarii[i].id %>'>-</button>
+                          </div>
+                <% } %>
+            <% } else { %>
+                <p>Nu avem comentarii de afisat</p>
+            <% } %>
+      </form>
+  </div>
+  
+</body>
+<script src='/index_contact.js'>
+ </script>
+<%- include("footer.ejs") %>
+</html>

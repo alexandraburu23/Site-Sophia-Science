@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <title>Sophia Science</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/sophia_style.css">
+        <link rel="shortcut icon" href="/sophia.png" type="image/x-icon"/>
+    </head>
+<body >
+
+<!-- headerul care se repeta pagina de pagina -->
+<%- include("navbar.ejs") %>
+
+<div class="continut">
+    <%- include("options.ejs") %>
+</div>
+
+<% if (locals.BD) { %>
+    <!-- <div> -->
+    <table class="info_contact" style="align-content: center;">
+        <tr style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: black">    
+            <th style="text-align: center;font-size: 70%;">ID   </th>
+            <th style="text-align: center;font-size: 70%;">Copil   </th>
+            <th style="text-align: center;font-size: 70%;">Data Nașterii    </th>
+            <th style="text-align: center;font-size: 70%;">Părinte   </th>
+            <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td><br></td>
+            </tr>
+        </tr>
+        <% for (var i = 0; i < BD.studenti.length; i++) { %>
+            <tr >
+                
+                <td style="text-align: center; font-size: 60%;"><%= BD.studenti[i].id %>     </td>
+                <td style="text-align: center; font-size: 60%;"><%= BD.studenti[i].cname %>     </td>
+                <td style="text-align: center; font-size: 60%;"><%= BD.studenti[i].bdate %>    </td>
+                <td style="text-align: center; font-size: 60%;"><%= BD.studenti[i].pname %>     </td>
+                
+            
+            
+            </tr>   
+            <tr>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td><br></td>
+            </tr>
+        <% } %>
+        </table>
+    <% } else { %>
+        <p>Nu avem studenti de afisat</p>
+    <% } %>
+
+</body>
+
+<%- include("footer.ejs") %>
+<script src='/index_contact.js'></script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Sophia Science</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/sophia_style.css"/>
+  <link rel="shortcut icon" href="/sophia.png" type="image/x-icon"/>
+
+</head>
+<body>
+    <%- include("navbar.ejs") %>
+    
+    <div id="continut">
+    <%- include("options.ejs") %>
+  </div>
+  <div id="continut">
+    <div class="inscriere">
+<% if(locals.user){ %>
+
+     <script>
+//         function logout(){
+//     fetch('http://localhost:3000/logout',{
+//         method: 'POST'
+//     }).then((response) => {
+//         if(response.status === 200){
+//             document.getElementById('logoutResponse').innerHTML = 'Ai iesit din cont';
+//             document.getElementsByClassName('info_login')[0].innerHTML = '';
+//         }
+//     })
+//  }
+    </script> 
+
+   
+
+    <p id='logoutResponse'>
+        <button onclick="logout()"style="width:10%; ">Deconectare Admin</button>
+    </p>
+    <div class="info_login">User logat: <%= user.username %>
+    
+  
+    <% if (locals.BD) { %>
+        <!-- <div> -->
+        <table class="info_contact" style="align-content: center;">
+            <tr style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: black">    
+                <th style="text-align: center;font-size: 70%;">ID   </th>
+                <th style="text-align: center;font-size: 70%;">Copil   </th>
+                <th style="text-align: center;font-size: 70%;">Data Nașterii    </th>
+                <th style="text-align: center;font-size: 70%;">Părinte   </th>
+                <th style="text-align: center;font-size: 70%;">Telefon   </th>
+                <th style="text-align: center;font-size: 70%;">Email   </th>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td><br></td>
+                </tr>
+            </tr>
+            <% for (var i = 0; i < BD.studenti.length; i++) { %>
+                <tr >
+                    
+                    <td style="text-align: center; font-size: 60%;"><%= BD.studenti[i].id %>     </td>
+                    <td style="text-align: center; font-size: 60%;"><%= BD.studenti[i].cname %>     </td>
+                    <td style="text-align: center; font-size: 60%;"><%= BD.studenti[i].bdate %>    </td>
+                    <td style="text-align: center; font-size: 60%;"><%= BD.studenti[i].pname %>     </td>
+                    <td style="text-align: center; font-size: 60%;"><%= BD.studenti[i].phoneno %>     </td>
+                    <td style="text-align: center; font-size: 60%;"><%= BD.studenti[i].email %>     </td>
+                    
+                
+                
+                </tr>   
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td><br></td>
+                </tr>
+            <% } %>
+            </table>
+        <% } else { %>
+            <p>Nu avem studenti de afisat</p>
+        <% } %>
+    
+<% } else { %>
+    <p>Nu aveti acces la aceasta optiune!</p>
+<% } %>
+</div>
+</div>
+</div>
+  <script src='/index_contact.js'></script>
+</body>
+<%- include("footer.ejs") %>
+</html>

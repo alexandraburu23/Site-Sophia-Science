@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Sophia Science</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/sophia_style.css"/>
+  <link rel="shortcut icon" href="/sophia.png" type="image/x-icon"/>
+  
+</head>
+
+<body>
+  
+  <!-- <img src="sophia.png" alt='Sophia Science' style="width:300px;" > -->
+  <div class='styledimg' alt="Sophia Science"></div>
+  <label class="switch">
+    <input type="checkbox">
+    <span id="switch" class="slider" onclick="toggleTheme()"></span>
+  </label>
+  <div class="open_navbar">
+  <span id="buton_meniu" onclick="menu()">&#9776;</span>
+  </div>
+  <div class="topnav" id="myNav">  
+  <ul >
+    <li><a href="sophia.html">Acasă</a></li>
+    <li><a href="about.html">Despre noi</a></li>
+    <li class="dropdown">
+      <a href="contest.html">Concursuri</a>
+      <div class="dropdown-content">
+        <a href="contest.html">WRO</a>
+        <a href="contest.html">FLL</a>
+        <a href="contest.html">FLL Junior</a>
+        <a href="contest.html">FTC</a>
+      </div>
+    </li>
+    <li><a href="galery.html">Galerie</a></li>
+  </ul>  
+  <ul class="contact">
+    <li ><a  href="inscrieri.html">Înscriere</a></li>
+    <li ><a class="active2" href="contact.html">Contact</a></li>
+  </ul>
+  
+  </div>
+  
+  <div id="continut" style="position: relative;">
+  <div id="form_sample" class="info_contact">
+    <form  method="post">
+      <label for="name">Nume și Prenume </label><br><br>
+      <input type="text" id="name" name="name" ><br><br>
+      <label for="phoneno"> Număr Telefon</label><br><br>
+      <input type="text" id="phoneno" name="phoneno"><br><br>
+      <label for="email"> Email </label><br><br>
+      <input type="text" id="email" name="email"><br><br>
+      <!-- <label for="checkbox"> Anonim </label>
+      <input type="checkbox" id="myCheck"><br><br> -->
+      <label for="subject">Mesaj</label><br><br>
+      <textarea id="subject" type="text" name="subject" placeholder="Scrie ceva.." style="height:100%; width: 100%; max-width: 200px;"></textarea><br><br>
+      <input  type="int" id="plus" value=0 style="visibility:hidden">
+      <input  type="int" id="minus" value=0 style="visibility:hidden">
+      <br><br>
+      <input type="submit" value="Submit" >  
+    </form> 
+      <button onclick="validate()">Verifica Date</button>
+      <!-- <button id='logOutButton' onclick="forgetUser()">Înregistrați-vă cu alte date</button>
+      <ul id='myList' style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+        <li id="first" class="comentariu"> Părerea ta este importantă pentru noi. </li>
+        <li id="second" class="comentariu" >Pune o întrebare. </li>
+        <li id="third" class="comentariu" >Spune un feedback. </li>
+      </ul> -->
+      </div>
+  </div>
+  <form method="get" action="/comentarii.ejs">
+    <div class='galery' style=" font-family: 'Open Sans', sans-serif; font-size:xx-large ">
+      <button class="button_galery">COMENTARII</button>
+    </div>
+</form>
+  
+ 
+  <div class="info_contact">
+  <p>Informații contact</p>
+  <p><img src="/phone.png" alt="Telefon" style="max-width:30px;">  0777 777 777</p>
+  <p><img src="/fb.png" alt="Facebook" style="width:10%;max-width:30px">    /SophiaScience</p>
+  <p><img src="/insta.png" alt="Instagram" style="width:10%;max-width:30px">   @sophia_science</p>
+  <p>Sediul se află la adresa: Str. Dornei, nr. 9, V3B parter, 800123.</p>
+    </div>
+  </div>
+  
+</body>
+<script src='/index_contact.js'>
+ </script>
+<%- include("footer.ejs") %>
+</html>

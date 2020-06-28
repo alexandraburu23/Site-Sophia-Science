@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Sophia Science</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/sophia_style.css"/>
+  <link rel="shortcut icon" href="/sophia.png" type="image/x-icon"/>
+  
+</head>
+
+<body>
+    
+  <!-- <img src="sophia.png" alt='Sophia Science' style="width:300px;" > -->
+  <div class='styledimg' alt="Sophia Science"></div>
+  <label class="switch">
+    <input type="checkbox">
+    <span id="switch" class="slider" onclick="toggleTheme()"></span>
+  </label>
+
+  <div class="open_navbar">
+    <span id="buton_meniu" onclick="menu()">&#9776;</span>
+    </div>
+  <div class="topnav" id="myNav">
+  <ul>
+    <li><a href="sophia.html">Acasă</a></li>
+    <li><a href="about.html">Despre noi</a></li>
+    <li class="dropdown">
+      <a href="contest.html">Concursuri</a>
+      <div class="dropdown-content">
+        <a href="contest.html">WRO</a>
+        <a href="contest.html">FLL</a>
+        <a href="contest.html">FLL Junior</a>
+        <a href="contest.html">FTC</a>
+      </div>
+    </li>
+    <li><a class="active" href="galery.html">Galerie</a></li>
+  </ul>  
+  <ul class="contact">
+    <li ><a  href="inscrieri.html">Înscriere</a></li>
+    <li ><a  href="contact.html">Contact</a></li>
+    
+  </ul>
+  </div>
+  <div class="galery"><button id="button_galery" class="button_galery" onclick="play_galery()">Afișeaza Imagini</button></div>
+  <div id="continut" style="visibility: hidden">
+   <div class="galery">
+      <img id="img1" onmouseover="increase('img1')" src="/poza1.jpg" alt="Premiere copii" class="galery_img" >
+      <img id="img2" onmouseover="increase('img2')" src="/poza4.jpg" alt="Premiu FLL" class="galery_img">
+      <img id="img3" onmouseover="increase('img3')" src="/poza7.jpg" alt="Medalie WRO" class="galery_img">
+      <img id="img4" onmouseover="increase('img4')" src="/poza13.jpg" alt="Premiere FLL Junior" class="galery_img">
+
+  </div>
+  <div class="galery">
+    <img id="img5" onmouseover="increase('img5')" src="/poza2.jpg" alt="Medalie WRO" class="galery_img" >
+    <img id="img6" onmouseover="increase('img6')" src="/poza10.jpg" alt="Robot WRO"class="galery_img" >
+    <img id="img7" onmouseover="increase('img7')" src="/poza6.jpg" alt="Stand WRO" class="galery_img" >
+    <img id="img8" onmouseover="increase('img8')" src="/poza11.jpg" alt="Pregatire Concurs" class="galery_img" >
+  </div>
+    <div class="galery">
+        <img id="img9" onmouseover="increase('img9')"src="/poza3.jpg" alt="Premiere WRO" class="galery_img">
+      
+        <img id="img10" onmouseover="increase('img10')"src="/poza5.jpg" alt="Lot WRO" class="galery_img">
+        
+        <img id="img11" onmouseover="increase('img11')"src="/poza8.jpg" alt="Festivitate Deschidere" class="galery_img">
+    </div>
+      
+  </div>
+      
+      
+  </div>
+  <script src='/index_contact.js'></script>
+</body>
+<%- include("footer.ejs") %>
+</html>
